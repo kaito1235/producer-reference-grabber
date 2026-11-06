@@ -44,6 +44,7 @@ Works on youtube.com and soundcloud.com. You can change the shortcut at chrome:/
 - Store icon (128×128): `extension/icons/icon128.png`
 - Screenshots (1280×800): `store/screenshot-1-library.png`, `store/screenshot-2-save.png`, `store/screenshot-3-popup.png`
 - Small promo tile (440×280): `store/promo-small.png`
+- Marquee promo tile (1400×560, optional): `store/promo-marquee.png`
 
 **Additional fields:**
 - Homepage URL: https://github.com/kaito1235/producer-reference-grabber
