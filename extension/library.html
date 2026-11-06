@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reference Library</title>
+  <link rel="icon" href="icons/icon32.png" />
+  <link rel="stylesheet" href="library.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><img src="icons/icon48.png" alt="" width="28" height="28" /> <h1>Reference Library</h1></div>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search notes, titles, #tags…" autofocus />
+      <select id="site" title="Site">
+        <option value="">All sites</option>
+        <option value="youtube">YouTube</option>
+        <option value="soundcloud">SoundCloud</option>
+      </select>
+      <select id="sort" title="Sort">
+        <option value="recent">Recently saved</option>
+        <option value="oldest">Oldest first</option>
+        <option value="title">Title A–Z</option>
+        <option value="count">Most moments</option>
+      </select>
+      <button id="export" class="primary" title="Export what's shown to CSV">Export CSV</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="side">
+      <div class="side-head">
+        <h2>Tags</h2>
+        <button id="clear-tags" class="link" hidden>clear</button>
+      </div>
+      <div id="tags" class="tag-list"></div>
+      <p class="hint">Click tags to filter (all selected must match). Add <code>#tags</code> in a note when you save with Alt+S.</p>
+      <div id="stats" class="stats"></div>
+    </aside>
+
+    <main>
+      <p id="summary" class="summary"></p>
+      <div id="cards" class="cards"></div>
+      <p id="empty" class="empty" hidden></p>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden><span></span><button class="link" id="undo">Undo</button></div>
+
+  <script src="common.js"></script>
+  <script src="library.js"></script>
+</body>
+</html>

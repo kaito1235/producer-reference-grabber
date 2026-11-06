@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+body {
+  width: 420px; margin: 0; padding: 12px;
+  font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #141417; color: #e8e8ea;
+}
+header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+h1 { font-size: 15px; margin: 0; color: #ff8a5c; }
+#count { color: #888; font-size: 12px; }
+.toolbar { display: flex; gap: 8px; margin-bottom: 10px; }
+#search {
+  flex: 1; padding: 8px 10px; border-radius: 8px; border: 1px solid #3a3a40;
+  background: #0d0d10; color: #fff; font-size: 13px; outline: none;
+}
+#search:focus { border-color: #ff5a1f; }
+button {
+  background: #ff5a1f; color: #fff; border: none; border-radius: 8px;
+  padding: 8px 12px; font-weight: 600; cursor: pointer;
+}
+button:hover { background: #ff7040; }
+#list { list-style: none; margin: 0; padding: 0; max-height: 420px; overflow-y: auto; }
+li {
+  display: grid; grid-template-columns: 56px 1fr 22px; gap: 4px 8px; align-items: start;
+  padding: 8px; border-radius: 8px; cursor: pointer; border: 1px solid transparent;
+}
+li:hover { background: #1e1e23; border-color: #2c2c33; }
+.ts { font-family: ui-monospace, Consolas, monospace; color: #ff8a5c; font-weight: 700; font-size: 14px; }
+.site { display: block; font-family: system-ui; font-weight: 500; font-size: 10px; color: #888; text-transform: uppercase; }
+.body { min-width: 0; }
+.title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; font-weight: 500; }
+.note {
+  width: 100%; margin-top: 3px; padding: 3px 6px; border-radius: 5px;
+  border: 1px solid transparent; background: transparent; color: #cfcfd4; font-size: 12px;
+}
+.note:hover { border-color: #33333a; }
+.note:focus { border-color: #ff5a1f; background: #0d0d10; outline: none; }
+.date { font-size: 11px; color: #666; margin-top: 2px; }
+.del { background: none; color: #666; padding: 0; font-size: 14px; line-height: 1; }
+.del:hover { background: none; color: #ff5a5a; }
+mark { background: #ff5a1f55; color: inherit; border-radius: 2px; }
+#empty { color: #777; text-align: center; padding: 24px 0; margin: 0; }
+footer { margin-top: 10px; color: #666; font-size: 11px; text-align: center; }
+footer a { color: #999; }
+button.secondary { background: #2a2a31; color: #e8e8ea; }
+button.secondary:hover { background: #35353d; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.tag { font-size: 11px; color: #ff8a5c; background: #2a1a14; border-radius: 999px; padding: 0 7px; }
