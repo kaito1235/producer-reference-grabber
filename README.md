@@ -23,3 +23,11 @@ Go to `chrome://extensions/shortcuts`, or use the link in the popup footer, and 
 
 ## Data
 Everything is stored locally in `chrome.storage.local`. Your notes and tags never leave your machine. The library page loads thumbnails from YouTube, and loads YouTube or SoundCloud players when you press play.
+
+## Chrome Web Store build
+```
+node build.mjs
+```
+This creates `dist/producer-reference-grabber-<version>.zip` to upload. The store build leaves out the AudioForges converter helper (`audioforges.js`) because Chrome Web Store policy doesn't allow YouTube download tools. That feature exists only when you load this repo's `extension/` folder unpacked.
+
+Listing text, permission justifications and screenshots are in [`store/`](store/LISTING.md). The privacy policy is in [`PRIVACY.md`](PRIVACY.md).

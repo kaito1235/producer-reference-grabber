@@ -112,7 +112,12 @@ function poster(group) {
   );
 }
 
-// ---------- "Get audio" (legit sources only) ----------
+// ---------- "Get audio" ----------
+// The converter link only appears when audioforges.js is in the manifest. The Chrome Web Store
+// build (build.mjs) removes it, because store policy doesn't allow YouTube download helpers.
+const HAS_CONVERTER = (chrome.runtime.getManifest?.().content_scripts || []).some((c) =>
+  c.js.includes("audioforges.js")
+);
 function cleanTitle(t) {
   return t
     .replace(/[([](official|lyric|lyrics|audio|video|music video|visualizer|hd|4k|free download)[^)\]]*[)\]]/gi, "")
@@ -126,7 +131,7 @@ function getAudioMenu(group) {
     ["Bandcamp", `https://bandcamp.com/search?q=${q}`, "WAV/FLAC, artist gets paid"],
     ["Beatport", `https://www.beatport.com/search?q=${q}`, "WAV/AIFF, electronic music"],
   ];
-  if (group.site === "youtube") {
+  if (group.site === "youtube" && HAS_CONVERTER) {
     // sendUrl: hand the video link to audioforges.js (via storage), which fills it into the converter's box.
     links.push(["AudioForges YouTube → WAV", "https://www.audioforges.com/youtube-to-wav", "link is filled in for you", true]);
   }
